@@ -1,0 +1,71 @@
+.bnt {
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    outline: none;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    font-family: 'Open Sans';
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.bnt:hover {
+    background-color: rgb(195, 191, 180);
+    color: #ffffff;
+
+}
+
+.bnt:active {
+    background-color: rgb(179, 149, 109);
+}
+
+.bnt-add {
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    outline: none;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    font-family: 'Open Sans';
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 5px;
+
+}
+
+.bnt-add:hover {
+    background-color: rgb(195, 191, 180);
+    color: #ffffff;
+
+}
+
+.bnt-add:active {
+    background-color: rgb(179, 149, 109);
+}
+
+.bunitin {
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    outline: none;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    font-family: 'Open Sans';
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    margin-left: 30px;
+}
+
+.bunitin:hover {
+    background-color: rgb(195, 191, 180);
+    color: #ffffff;
+}
+
+.bunitin:active {
+    background-color: rgb(179, 149, 109);
+}
+
+.esconder {
+    display: none;
+}

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style></style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
+  <title>MeDog</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/variables.css" />
+  <link rel="stylesheet" href="assets/css/elements.css" />
+  <link rel="stylesheet" href="assets/css/classes.css" />
+  <link rel="stylesheet" href="assets/css/menu.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+
+  <script>
+    var exibir = false;
+    function toggleFormulario() {
+
+    }
+
+
+    function ocultarFormulario() { // ESSA FUNCAO
+      var a = document.getElementById("formulario")
+      a.classList.add("esconder")
+    }
+
+    function exibirFormulario() {
+      let elemento = document.getElementById('formulario');
+      let classes = elemento.className.split(' ');
+      if (classes.length > 0) {
+        classes.pop();
+      }
+      let novaClasse = classes.join(" ")
+      elemento.className = novaClasse;
+    }
+
+
+
+
+    var dados = [
+      {
+        "nome": "Juao",
+        "dono": "Pablo",
+        "phone": "(81) 99854-3290",
+        "email": "pablo@gmail.com",
+        "imagem": "https://place.dog/100/100?asdasdasd1"
+      },
+      {
+        "nome": "Rex",
+        "dono": "João Silva",
+        "phone": "(11) 91234-5678",
+        "email": "rexcachorrao@gmail.com",
+        "imagem": "https://place.dog/100/100?asdasdasd2"
+      },
+      {
+        "nome": "Bella",
+        "dono": "Maria Oliveira",
+        "phone": "(21) 98765-4321",
+        "email": "Belinha@gmail.com",
+        "imagem": "https://place.dog/100/100?asdasdasd3"
+      },
+      {
+        "nome": "Thor",
+        "dono": "Carlos Souza",
+        "phone": "(31) 99876-1234",
+        "email": "Thor@gmail.com",
+        "imagem": "https://place.dog/100/100?asdasdasd3"
+      }
+    ]
+
+
+    function buscarDados() {
+      corpoDaTabela.innerHTML = ""
+
+
+      for (let index = 0; index < dados.length; index++) {
+        const item = dados[index];
+        var personalizado = corpoDaTabela.innerHTML;
+        inserirItemNaTabela(item, personalizado, index)
+      }
+    }
+
+    function inserirItemNaTabela(item, personalizado, index) {
+      personalizado = personalizado + '<tr id="linha' + index + '" ><td> <img src="'
+        + item['imagem'] + '" />' +
+        '</td><td>'
+        + item['nome'] +
+        '</td><td>'
+        + item['dono'] +
+        '</td><td>'
+        + item['phone'] +
+        '</td><td>'
+        + item['email'] +
+        '</td><td><button class="bnt" onclick="editar('
+        + index +
+        ')">Editar</button><button class="bnt" onclick="excluir('
+        + index +
+        ')">Excluir</button></td></tr>'
+
+      corpoDaTabela.innerHTML = personalizado;
+    }
+
+    function adicionar() {
+      document.getElementById("formulario").preventde
+      alert("Seu Dogguinho foi adicionado na nossa Lista")
+
+      document.getElementsByName("cachorro")
+
+      var novoCachorro = {
+
+        "nome": document.getElementsByName("cachorro")[0].value,
+        "dono": document.getElementsByName("dono")[0].value,
+        "phone": document.getElementsByName("tefefone")[0].value,
+        "email": document.getElementsByName("email")[0].value,
+        "imagem": document.getElementsByName("imagem")[0].value
+
+
+      }
+
+      dados.push(novoCachorro)
+
+      buscarDados();
+    }
+
+
+
+    function editar(index) {
+      alert("Editando")
+      alert(index)
+    }
+
+    function excluir(index) {
+      alert("Seu Dogguinho foi excluído")
+      dados.splice(index, 1)
+      buscarDados()
+    }
+  </script>
+
+</head>
+
+<body>
+  <header class="menu">
+    <div class="menudiv">
+      <h1>Lista De Cachorros e Donos</h1>
+    </div>
+  </header>
+  <div class="menu-spacing"></div>
+  <button onclick="exibirFormulario()" class="bunitin"> Adicionar Doguinho</button>
+  <br />
+  
+
+  <div class="telainteira">
+    <div class="form">
+      <div id="formulario" class="preecher  form__group field">
+        <h2 style="font-family: 'Josefin Sans';"> Preencha os dados a Seguir:</h2>
+        <label class="form__label">Cachorro</label>
+        <input class="form__field" required placeholder="Nome do Cachorro" name="cachorro" type="text" />
+        <br />
+        <label class="form__label">Dono</label>
+        <input class="form__field" required placeholder="Seu Nome" name="dono" type="text" />
+        <br />
+        <label class="form__label">Telefone</label>
+        <input class="form__field" required placeholder="Numero" name="tefefone" type="tel" />
+        <br />
+        <label class="form__label">Email</label>
+        <input class="form__field" required placeholder="Email" name="email" type="email" />
+        <br />
+        <label class="form__label">Imagem</label>
+        <input class="form__field" placeholder="JPG" name="imagem" type="text" /> <br />
+        <button class="bnt-add" onclick="adicionar()">Adicionar</button>
+        <button class="bnt-add" onclick="ocultarFormulario()">Cancelar</button>
+      </div>
+    </div>
+    <div class="conteudo">
+      <main>
+        <div class="container-table esconder">
+          <table class="responsive-table" border="1">
+            <thead>
+              <td>Imagem</td>
+              <td>Cachorro</td>
+              <td>Dono</td>
+              <td>Telefone</td>
+              <td>Email</td>
+              <td>Ações</td>
+            </thead>
+            <tbody id="corpoDaTabela">
+              <tr>
+                <td><img src="https://place.dog/100/100?asdasdasd1" /></td>
+                <td>Juao</td>
+                <td>Pablo</td>
+                <td>(81) 99854-3290</td>
+                <td>jeca@gmail.com</td>
+                <td>
+                  <button class="bnt" onclick="excluir()">Editar</button>
+                  <button class="bnt" onclick="excluir()">Excluir</button>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="https://place.dog/100/100?asdasdasd4" /></td>
+                <td>Rex</td>
+                <td>João Silva</td>
+                <td>(11) 91234-5678</td>
+                <td>joao.silva@email.com</td>
+                <td>
+                  <button class="bnt" onclick="excluir()">Editar</button>
+                  <button class="bnt" onclick="excluir()">Excluir</button>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="https://place.dog/100/100?random3" /></td>
+                <td>Bella</td>
+                <td>Maria Oliveira</td>
+                <td>(21) 98765-4321</td>
+                <td>maria.oliveira@email.com</td>
+                <td>
+                  <button class="bnt" onclick="excluir()">Editar</button>
+                  <button class="bnt" onclick="excluir()">Excluir</button>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="https://place.dog/100/100?asdasdasd2" /></td>
+                <td>Thor</td>
+                <td>Carlos Souza</td>
+                <td>(31) 99876-1234</td>
+                <td>Thor@email.com</td>
+                <td>
+    
+                  <button class="bnt" onclick="excluir()">Editar</button>
+                  <button class="bnt" onclick="excluir()">Excluir</button>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </main>
+    </div>
+  </div>
+
+ 
+</body>
+
+</html>

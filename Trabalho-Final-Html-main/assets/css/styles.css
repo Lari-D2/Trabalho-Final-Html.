@@ -1,0 +1,157 @@
+/* Duvidas para proxima aula:
+como deixar ambas as informações em coluna para quando a tela diminuir 
+ficar tudo alinhado, e nenhuma div sobrepor a outra???
+Como colocar o Header no topo sem nada sobrepor ele
+Como fazer as linhas não reagirem umas as outras assim fazendo a animação 
+respectiva a cada uma
+existe um jeito de mudar o alert para algo mais estetico?
+Como configurar o .esconder??????
+Como mudar cada uma das raças pra um DIFERENTE
+O que eu fiz pro excluir não funcionar???????????*/
+
+
+.responsive-table {
+    overflow-x: auto;
+    margin: 10px auto;
+    /* Centraliza horizontalmente */
+    width: fit-content;
+}
+
+table {
+    border-collapse: collapse;
+    box-sizing: border-box;
+}
+
+
+table caption {
+    font-size: 1.6rem;
+}
+
+table td,
+table th {
+    white-space: nowrap;
+    padding: 1rem;
+    text-align: left;
+    border: 0.1rem solid var(--light-gray-color);
+    background-color: rgb(255, 255, 255);
+}
+
+tfoot td,
+table th {
+    background-color: #f4f4f4;
+}
+
+td {
+    font-family: 'Open Sans';
+    height: 30px;
+}
+
+tr {
+    height: 50px;
+}
+
+.container-table {
+
+    background-color: var(--purple-color);
+    border-radius: 10px;
+    padding: 20px;
+    width: fit-content;
+    margin: 50px auto;
+    margin-top: 7px;
+    display: flex;
+    gap: 70px;
+
+}
+
+/* Definindo as cores diretamente */
+:root {
+    --primary: #11998e;
+    --secondary: #5938ef;
+    --white: #fff;
+    --gray: #9b9b9b;
+}
+
+.form__group {
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 50%;
+}
+
+.form__field {
+    font-family: 'Open Sans';
+    width: 30%;
+    border: 0;
+    border-bottom: 2px solid var(--gray);
+    outline: 0;
+    font-size: 1.3rem;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+/* Estilo do placeholder */
+.form__field::placeholder {
+    color: transparent;
+}
+
+/* Estilo do label quando o placeholder é mostrado */
+.form__field:placeholder-shown~.form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+}
+
+.form__label {
+    display: block;
+    transition: 0.2s;
+    font-size: 1.3rem;
+    color: var(--gray);
+}
+
+.form__field:focus~.form__label {
+
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 500;
+    border-width: 3px;
+    border-image: linear-gradient(to right,
+            var(--primary),
+            var(--secondary));
+    border-image-slice: 1;
+}
+
+Reset para input .form__field:required,
+.form__field:invalid {
+    box-shadow: none;
+}
+
+.form__group {
+    position: absolute;
+    margin-left: 30px;
+}
+
+.form__label {
+    font-family: 'Open Sans';
+}
+
+.telainteira {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.form {
+    flex: 1;
+}
+
+.conteudo {
+    flex: 4;
+}

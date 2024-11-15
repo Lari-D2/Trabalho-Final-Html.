@@ -1,0 +1,22 @@
+header {
+    position: sticky;
+    
+}
+
+.menu1 {
+    z-index: 1;
+}
+
+.menu {
+    padding: 15px;
+    position: top;
+    width: 100%;
+    border-bottom: 0.2rem solid var(--purple-color);
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #ffffff;
+    border-collapse: collapse;
+}
+
+main {
+    display: flex;
+}
